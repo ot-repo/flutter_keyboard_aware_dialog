@@ -110,7 +110,7 @@ class KeyboardAwareAlertDialog extends StatelessWidget {
     this.clipBehavior = Clip.none,
     this.shape,
     this.scrollable = false,
-  })  : super(key: key);
+  }) : super(key: key);
 
   /// The (optional) title of the dialog is displayed in a large font at the top
   /// of the dialog.
@@ -312,8 +312,7 @@ class KeyboardAwareAlertDialog extends StatelessWidget {
         case TargetPlatform.fuchsia:
         case TargetPlatform.linux:
         case TargetPlatform.windows:
-          label = semanticLabel ??
-              MaterialLocalizations.of(context).alertDialogLabel;
+          label = semanticLabel ?? MaterialLocalizations.of(context).alertDialogLabel;
       }
     }
 
@@ -322,12 +321,9 @@ class KeyboardAwareAlertDialog extends StatelessWidget {
     Widget? actionsWidget;
     if (title != null)
       titleWidget = Padding(
-        padding: titlePadding ??
-            EdgeInsets.fromLTRB(24.0, 24.0, 24.0, content == null ? 20.0 : 0.0),
+        padding: titlePadding ?? EdgeInsets.fromLTRB(24.0, 24.0, 24.0, content == null ? 20.0 : 0.0),
         child: DefaultTextStyle(
-          style: titleTextStyle ??
-              dialogTheme.titleTextStyle ??
-              theme.textTheme.headline6!,
+          style: titleTextStyle ?? dialogTheme.titleTextStyle ?? theme.textTheme.headlineSmall!,
           child: Semantics(
             child: title,
             namesRoute: true,
@@ -340,9 +336,7 @@ class KeyboardAwareAlertDialog extends StatelessWidget {
       contentWidget = Padding(
         padding: contentPadding,
         child: DefaultTextStyle(
-          style: contentTextStyle ??
-              dialogTheme.contentTextStyle ??
-              theme.textTheme.subtitle1!,
+          style: contentTextStyle ?? dialogTheme.contentTextStyle ?? theme.textTheme.titleMedium!,
           child: content!,
         ),
       );

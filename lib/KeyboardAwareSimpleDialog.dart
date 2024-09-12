@@ -98,7 +98,7 @@ class KeyboardAwareSimpleDialog extends StatelessWidget {
     this.elevation,
     this.semanticLabel,
     this.shape,
-  })  : super(key: key);
+  }) : super(key: key);
 
   /// The (optional) title of the dialog is displayed in a large font at the top
   /// of the dialog.
@@ -176,8 +176,7 @@ class KeyboardAwareSimpleDialog extends StatelessWidget {
         case TargetPlatform.fuchsia:
         case TargetPlatform.linux:
         case TargetPlatform.windows:
-          label =
-              semanticLabel ?? MaterialLocalizations.of(context).dialogLabel;
+          label = semanticLabel ?? MaterialLocalizations.of(context).dialogLabel;
       }
     }
 
@@ -193,7 +192,7 @@ class KeyboardAwareSimpleDialog extends StatelessWidget {
               Padding(
                 padding: titlePadding,
                 child: DefaultTextStyle(
-                  style: theme.textTheme.headline6!,
+                  style: theme.textTheme.headlineSmall!,
                   child: Semantics(namesRoute: true, child: title),
                 ),
               ),
